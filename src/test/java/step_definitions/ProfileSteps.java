@@ -12,7 +12,7 @@ import org.openqa.selenium.devtools.v85.profiler.model.Profile;
 
 public class ProfileSteps {
 
-    public WebDriver driver;
+    final private WebDriver driver;
 
     public ProfileSteps() {
         super();
