@@ -1,5 +1,6 @@
 package step_definitions;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -70,5 +71,27 @@ public class RegisterSteps {
         RegisterPage registerPage = new RegisterPage(driver);
         Thread.sleep(2000);
         Assert.assertTrue(registerPage.validateLoginTitle());
+    }
+
+    @When("^User input \"([^\"]*)\" as username, \"([^\"]*)\" as email, and \"([^\"]*)\" as password$")
+    public void userInputAsUsernameAsEmailAndAsPassword(String username, String email, String password) {
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.setRegisterInputValues(1, username);
+        registerPage.setRegisterInputValues(2, email);
+        registerPage.setRegisterInputValues(3, password);
+    }
+
+    @Then("^Alert with message \"([^\"]*)\" is shown$")
+    public void alertWithMessageIsShown(String alertMessage) throws InterruptedException {
+        RegisterPage registerPage = new RegisterPage(driver);
+        Thread.sleep(4000);
+        Assert.assertTrue(registerPage.validateErrorMessageisDisplayed(alertMessage));
+    }
+
+    @When("^User input \"([^\"]*)\" as email, and \"([^\"]*)\" as password$")
+    public void userInputAsEmailAndAsPassword(String email, String password) {
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.setRegisterInputValues(2, email);
+        registerPage.setRegisterInputValues(3, password);
     }
 }
