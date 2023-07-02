@@ -21,7 +21,7 @@ public class NewRecipePage {
     @FindBy(xpath = "//a[@href='/recipes/new']")
     private WebElement newRecipeBtn;
 
-    @FindBy(xpath = "//button[@class='font-semibold']")
+    @FindBy(xpath = "//button[contains(text(), 'New Recipe')]")
     private WebElement newRecipePageTitle;
 
     @FindBy(xpath = "//form/div[1]/input")

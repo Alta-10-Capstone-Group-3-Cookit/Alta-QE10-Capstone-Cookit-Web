@@ -139,4 +139,23 @@ public class NewRecipeSteps {
         NewRecipePage newRecipePage = new NewRecipePage(driver);
         Assert.assertTrue(newRecipePage.validatePrice(price));
     }
+
+    @Then("^User still on New Recipe page$")
+    public void userStillOnNewRecipePage() throws InterruptedException {
+        NewRecipePage newRecipePage = new NewRecipePage(driver);
+        Thread.sleep(4000);
+        Assert.assertTrue(newRecipePage.validateNewRecipePage());
+    }
+
+    @And("^Upload invalid image file$")
+    public void uploadInvalidImageFile() {
+        NewRecipePage newRecipePage = new NewRecipePage(driver);
+        newRecipePage.uploadRecipeImage("recipe_img.txt");
+    }
+
+    @And("^Clear price input$")
+    public void clearPriceInput() {
+        NewRecipePage newRecipePage = new NewRecipePage(driver);
+        newRecipePage.inputPrice("");
+    }
 }
