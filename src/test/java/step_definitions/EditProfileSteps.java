@@ -75,4 +75,30 @@ public class EditProfileSteps {
         EditProfilePage editProfile = new EditProfilePage(driver);
         editProfile.clickRequestBtn();
     }
+
+    @When("^User input \"([^\"]*)\" as Bio, \"([^\"]*)\" as new and confirm new password, and upload valid profile image$")
+    public void userInputAsBioAsNewAndConfirmNewPasswordAndUploadValidProfileImage(String bio, String newConfirmPassword) {
+        EditProfilePage editProfilePage = new EditProfilePage(driver);
+        editProfilePage.setBioField(bio);
+        editProfilePage.setPasswordFields(2, newConfirmPassword);
+        editProfilePage.setPasswordFields(3, newConfirmPassword);
+        editProfilePage.uploadImage("profile.png");
+    }
+
+    @Then("^Error message alert should be displayed$")
+    public void errorMessageAlertShouldBeDisplayed() throws InterruptedException {
+        EditProfilePage editProfilePage = new EditProfilePage(driver);
+        Thread.sleep(4000);
+        Assert.assertTrue(editProfilePage.validateErrorMessage());
+    }
+
+    @When("^User input \"([^\"]*)\" as Bio, \"([^\"]*)\" as current password, \"([^\"]*)\" as new and confirm new password, and upload valid profile image$")
+    public void userInputAsBioAsCurrentPasswordAsNewAndConfirmNewPasswordAndUploadValidProfileImage(String bio, String currentPassword, String confirmNewPassword) {
+        EditProfilePage editProfilePage = new EditProfilePage(driver);
+        editProfilePage.setBioField(bio);
+        editProfilePage.setPasswordFields(1, currentPassword);
+        editProfilePage.setPasswordFields(2, confirmNewPassword);
+        editProfilePage.setPasswordFields(3, confirmNewPassword);
+        editProfilePage.uploadImage("profile.png");
+    }
 }

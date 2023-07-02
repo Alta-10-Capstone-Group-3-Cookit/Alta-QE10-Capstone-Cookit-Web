@@ -1,6 +1,6 @@
 Feature: Register user
 
-  @Register
+  @Register @RegisterPositive
   Scenario: User register with valid and unregistered username, email, and password
     Given User already on Cookit landing page
     When User click on Sign In button
