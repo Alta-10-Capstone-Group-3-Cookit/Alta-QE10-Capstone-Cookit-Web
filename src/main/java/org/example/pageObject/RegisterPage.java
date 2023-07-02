@@ -15,8 +15,8 @@ public class RegisterPage {
         RegisterPage.driver = driver;
     }
 
-    public static String REGISTER_USERNAME = "userregis4";
-    public static String REGISTER_EMAIL = "userregis4@testmail.com";
+    public static String REGISTER_USERNAME = "userregis5";
+    public static String REGISTER_EMAIL = "userregis5@testmail.com";
 
     @FindBy(xpath = "//a[@href='/login']")
     private WebElement signInButton;

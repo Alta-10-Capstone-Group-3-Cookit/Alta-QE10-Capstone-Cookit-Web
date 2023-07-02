@@ -66,6 +66,7 @@ public class EditProfilePage {
     }
 
     public void setBioField(String value) {
+        bioField.clear();
         bioField.sendKeys(value);
     }
 

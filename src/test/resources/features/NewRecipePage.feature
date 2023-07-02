@@ -168,6 +168,3 @@ Feature: Add new reecipe
     And Clear price input
     And Click Submit button
     Then User still on New Recipe page
-
-  @NewRecipePage
-  Scenario: Add new recipe with blank
