@@ -36,4 +36,16 @@ public class LoginSteps {
         Thread.sleep(3000);
         Assert.assertTrue(loginPage.validateHomePageTitle());
     }
+
+    @When("^User input \"([^\"]*)\" as password$")
+    public void userInputAsPassword(String password) {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.setLoginInputFields(2, password);
+    }
+
+    @When("^User input \"([^\"]*)\" as username$")
+    public void userInputAsUsername(String username) {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.setLoginInputFields(1, username);
+    }
 }
