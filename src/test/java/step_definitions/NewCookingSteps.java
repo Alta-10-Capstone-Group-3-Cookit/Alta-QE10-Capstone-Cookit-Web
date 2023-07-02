@@ -63,4 +63,11 @@ public class NewCookingSteps {
         Thread.sleep(4000);
         Assert.assertTrue(newCookingPage.validateProfilePage());
     }
+
+    @Then("^User still on New Cooking page$")
+    public void userStillOnNewCookingPage() throws InterruptedException {
+        NewCookingPage newCookingPage = new NewCookingPage(driver);
+        Thread.sleep(4000);
+        Assert.assertTrue(newCookingPage.validateNewCookingPage());
+    }
 }
