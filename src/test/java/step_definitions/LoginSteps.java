@@ -33,7 +33,7 @@ public class LoginSteps {
     @Then("^User already on Home Page$")
     public void userAlreadyOnHomePage() throws InterruptedException {
         LoginPage loginPage = new LoginPage(driver);
-        Thread.sleep(3000);
+        Thread.sleep(4000);
         Assert.assertTrue(loginPage.validateHomePageTitle());
     }
 
