@@ -44,6 +44,9 @@ public class HomePage {
     @FindBy(xpath = "//div[@class='relative min-h-screen flex flex-col w-full sm:w-2/3 lg:w-1/2 max-w-xl items-center justify-start']/div[2]//p[@class='font-semibold text-primary hover:text-accent hover:cursor-pointer']")
     private WebElement RecipeName;
 
+    @FindBy(xpath = "//button[@class='font-semibold']")
+    private WebElement RecipeHeader;
+
     public void clickTimelineTabButton() {
         TimelineTabBtn.click();
     }
@@ -66,6 +69,10 @@ public class HomePage {
 
     public String getRecipeName(){
         return RecipeName.getText();
+    }
+
+    public boolean getRecipeNameHeader(){
+        return RecipeHeader.isDisplayed();
     }
 
     public void clickSearchButton() {
