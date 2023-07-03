@@ -3,7 +3,6 @@ package step_definitions;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import org.example.pageObject.HomePage;
-import org.example.pageObject.LoginPage;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
@@ -49,12 +48,6 @@ public class HomePageSteps {
         homePage.clickRecipeName();
     }
 
-//    @And("^User already on recipe page$")
-//    public void userAlreadyOnRecipePage() {
-//        HomePage homePage = new HomePage(driver);
-//        Assert.assertTrue(homePage.getRecipeName(), );
-//    }
-
     @And("^User click search icon button$")
     public void userClickSearchIconButton() {
         HomePage homePage = new HomePage(driver);
@@ -84,6 +77,13 @@ public class HomePageSteps {
     public void userAlreadyOnCartPage() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         Assert.assertTrue(homePage.validateCartPage());
+        Thread.sleep(3000);
+    }
+
+    @And("^User already on recipe page$")
+    public void userAlreadyOnRecipePage() throws InterruptedException {
+        HomePage homePage = new HomePage(driver);
+        Assert.assertTrue(homePage.getRecipeNameHeader());
         Thread.sleep(3000);
     }
 }

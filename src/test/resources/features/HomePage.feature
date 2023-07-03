@@ -22,7 +22,7 @@ Feature: Home Page
     Then User already on Home Page
     And User already on Recipe Tab
 
-
+  @HomePage
   Scenario: User go to recipe page
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -32,7 +32,7 @@ Feature: Home Page
     Then User already on Home Page
     And User already on Recipe Tab
     Then User click on recipe name
-#    And User already on recipe page
+    And User already on recipe page
 
 
   Scenario: User go to search page
@@ -56,7 +56,7 @@ Feature: Home Page
     And User already on Recipe Tab
     Then User click on add to cart icon button on recipe tab on home page
 
-  @HomePage
+
   Scenario: User go to cart page
     Given User already on Cookit landing page
     When User click on Sign In button
