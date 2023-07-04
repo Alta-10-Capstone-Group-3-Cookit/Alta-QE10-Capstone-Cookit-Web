@@ -40,7 +40,7 @@ Feature: Cart Page
     And User already on Detail Purchase page
 
   @CartPage
-  Scenario: User checkout item
+  Scenario: User pay for placed order
     Given User already on Cookit landing page
     When User click on Sign In button
     Then User already on login page
@@ -63,20 +63,13 @@ Feature: Cart Page
     And User already on Detail Purchase page
     And User copy the virtual account number that displayed on detail purchased page
     When User go to midtrans page for payment
-#    Then User click on virtual account number field on midtrans page
-#    And User paste the Virtual Account Number to virtual account number field on midtrans page
-#    And User click on inquiry button on midtrans page
-#    And User Redirected to inquiry page on midtrans
-#    And User already on inquiry page on midtrans
-#    And User verify amount to pay value same as order total value
-#    When User click pay on inquiry page on midtrans
-#    Then Payment Success message will appear
-#    And User go back to detail purchase page on cookit
-#    And User go back to home page
-#    When User click on profile icon button
-#    Then User click on my purchase button
-#    And User redirected to my purchase page
-#    And User already on my purchase page
-#    When User click on shipped tab
-#    Then User already on shipped tab on my purchase page
-#    And list of paid item will appear
+    And User input the Virtual Account Number to virtual account number field on midtrans page
+    And User click on inquire button on midtrans page
+    And User already on inquiry page on midtrans
+    When User click pay on inquiry page on midtrans
+    Then Payment Success message will appear
+    And User go back to detail purchase page on cookit
+    And User click back button
+    And User already on my purchase page
+    When User click on shipped tab
+    And list of paid item will appear

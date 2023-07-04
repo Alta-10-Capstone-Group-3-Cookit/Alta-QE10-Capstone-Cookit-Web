@@ -1,11 +1,14 @@
 package org.example.pageObject;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.ArrayList;
 
 public class CartPage {
 
@@ -13,7 +16,7 @@ public class CartPage {
 
     public CartPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
-        HomePage.driver = driver;
+        CartPage.driver = driver;
     }
 
     @FindBy(xpath = "//p[@class='text-md md:text-2xl col-span-1']")
@@ -34,7 +37,7 @@ public class CartPage {
     @FindBy(xpath = "//h1[.='Payment']")
     private WebElement PaymenntPageTitle;
 
-    @FindBy(xpath = "//div[@class='grid grid-cols-1 gap-5 md:grid-cols-2']/div[contains(.,'Receive by 6 July-10 JulyRp 9.000')]")
+    @FindBy(xpath = "//div[@class='grid grid-cols-1 gap-5 md:grid-cols-2']/div[contains(.,'Receive')][1]")
     private WebElement ChoosenCourier;
 
     @FindBy(xpath = "//p[.='Payment Option']")
@@ -70,7 +73,35 @@ public class CartPage {
     @FindBy(xpath = "//span[@class='cursor-pointer']")
     private WebElement CopyBtn;
 
+    @FindBy(xpath = "//input[@id='inputMerchantId']")
+    private WebElement VaNumberField;
 
+    @FindBy(xpath = "//button[.='Inquire']")
+    private WebElement InquireBtn;
+
+    @FindBy(xpath = "//label[.='Amount to pay']")
+    private WebElement InquirePageVerif;
+
+    @FindBy(xpath = "//input[@name='total_amount']")
+    private WebElement totalAmount;
+
+    @FindBy(xpath = "//button[.='Pay']")
+    private WebElement payBtn;
+
+    @FindBy(xpath = "//div[@class='alert alert-success']")
+    private WebElement successPaymentMessage;
+
+    @FindBy(xpath = "//a[@href='/history']")
+    private WebElement DetailPurchaseBackBtn;
+
+    @FindBy(xpath = "//h1[.='My Purchase']")
+    private WebElement myPurchasePageTitle;
+
+    @FindBy(xpath = "//p[.='Shipped']")
+    private WebElement shippedTabBtn;
+
+    @FindBy(xpath = "//div[@class='bg-gray-100  ']/div[3]//p[@class='text-md md:text-2xl col-span-1']")
+    private WebElement paidItemName;
 
     public boolean validateProductName() {
         return ProductNameBtn.isDisplayed();
@@ -105,7 +136,7 @@ public class CartPage {
         PaymentMethodBtn.click();
     }
 
-    public String MerchandisePlusShipping() {
+    public String merchandisePlusShipping() {
         String merchand = MerchandiseTotal.getText().replace("Rp ", "");
         String shipping = ShippingTotal.getText().replace("Rp ", "");
         int merchandTotal = Integer.valueOf(merchand);
@@ -143,9 +174,55 @@ public class CartPage {
     public void clickCopyBtn() {
         CopyBtn.click();
     }
+
     public void moveToMidtrans() {
-        String midtransUrl = "https://simulator.sandbox.midtrans.com/bni/va/index/";
+        String midtransUrl = "https://simulator.sandbox.midtrans.com/bni/va/index";
         driver.switchTo().newWindow(WindowType.TAB);
-        driver.get("https://simulator.sandbox.midtrans.com/bni/va/index");
+        driver.get(midtransUrl);
+    }
+
+    public void inputVaNumber() {
+        Actions actions = new Actions(driver);
+        VaNumberField.click();
+        actions.keyDown(Keys.LEFT_CONTROL).sendKeys("v").keyUp(Keys.LEFT_CONTROL).build().perform();
+
+    }
+
+    public void clickInquireBtn() {
+        InquireBtn.click();
+    }
+
+    public boolean validateInquirePage(){
+        return InquirePageVerif.isDisplayed();
+    }
+
+    public void clickPayBtn() {
+        payBtn.click();
+    }
+
+    public boolean validateSuccessPayment(){
+        return successPaymentMessage.isDisplayed();
+    }
+
+    public void closeMidtransTab(){
+        ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+        driver.close();
+        driver.switchTo().window(tabs.get(0));
+    }
+
+    public void clickBackBtn() {
+        DetailPurchaseBackBtn.click();
+    }
+
+    public boolean validateMyPurchasePage(){
+        return myPurchasePageTitle.isDisplayed();
+    }
+
+    public void clickShippedTabButton() {
+        shippedTabBtn.click();
+    }
+
+    public boolean validatePaidItemName(){
+        return paidItemName.isDisplayed();
     }
 }

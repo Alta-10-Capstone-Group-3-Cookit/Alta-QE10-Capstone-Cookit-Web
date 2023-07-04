@@ -18,10 +18,9 @@ public class CartPageSteps {
     }
 
     @And("^List of added item will appear$")
-    public void userAlreadyOnTimelineTab() throws InterruptedException {
+    public void userAlreadyOnTimelineTab() {
         CartPage cartPage = new CartPage(driver);
         Assert.assertTrue(cartPage.validateProductName());
-        Thread.sleep(3000);
     }
 
     @When("^user click on checkbox on selected item$")
@@ -34,7 +33,6 @@ public class CartPageSteps {
     public void userVerifyTotalPrice() throws InterruptedException {
         CartPage cartPage = new CartPage(driver);
         Assert.assertEquals(cartPage.getTotalPrice(),cartPage.getItemPrice());
-        Thread.sleep(2000);
     }
 
     @And("^User click checkout button$")
@@ -47,7 +45,6 @@ public class CartPageSteps {
     public void userAlreadyOnPaymentPage() throws InterruptedException {
         CartPage cartPage = new CartPage(driver);
         Assert.assertTrue(cartPage.validatePaymentPage());
-        Thread.sleep(2000);
     }
 
     // Payment Page
@@ -67,7 +64,7 @@ public class CartPageSteps {
     @And("^User verify order total$")
     public void userVerifyOrderTotal() {
         CartPage cartPage = new CartPage(driver);
-        Assert.assertEquals(cartPage.MerchandisePlusShipping(),cartPage.validateTotalPriceOrder());
+        Assert.assertEquals(cartPage.merchandisePlusShipping(),cartPage.validateTotalPriceOrder());
     }
 
     @And("^User click place order button$")
@@ -77,10 +74,9 @@ public class CartPageSteps {
     }
 
     @And("^Password confirmation pop-up will appear$")
-    public void passwordConfirmationPopUpWillAppear() throws InterruptedException {
+    public void passwordConfirmationPopUpWillAppear() {
         CartPage cartPage = new CartPage(driver);
         Assert.assertTrue(cartPage.validatePassConfirmPopup());
-        Thread.sleep(1500);
     }
 
     @And("^User input \"([^\"]*)\" as confirm password$")
@@ -100,7 +96,6 @@ public class CartPageSteps {
     public void userAlreadyOnDetailPurchasePage() throws InterruptedException {
         CartPage cartPage = new CartPage(driver);
         Assert.assertTrue(cartPage.validateDetailPurchasePage());
-        Thread.sleep(2000);
     }
 
     @And("^User copy the virtual account number that displayed on detail purchased page$")
@@ -113,6 +108,68 @@ public class CartPageSteps {
     public void userGoToMidtransPageForPayment() throws InterruptedException {
         CartPage cartPage = new CartPage(driver);
         cartPage.moveToMidtrans();
+    }
+
+    @And("^User input the Virtual Account Number to virtual account number field on midtrans page$")
+    public void userInputTheVirtualAccountNumberToVirtualAccountNumberFieldOnMidtransPage() throws InterruptedException {
+        CartPage cartPage = new CartPage(driver);
+        cartPage.inputVaNumber();
+    }
+
+    @And("^User click on inquire button on midtrans page$")
+    public void userClickOnInquireButtonOnMidtransPage() throws InterruptedException {
+        CartPage cartPage = new CartPage(driver);
+        cartPage.clickInquireBtn();
         Thread.sleep(2000);
+    }
+
+    @And("^User already on inquiry page on midtrans$")
+    public void userAlreadyOnInquiryPageOnMidtrans() {
+        CartPage cartPage = new CartPage(driver);
+        Assert.assertTrue(cartPage.validateInquirePage());
+    }
+
+    @When("^User click pay on inquiry page on midtrans$")
+    public void userClickPayOnInquiryPageOnMidtrans() {
+        CartPage cartPage = new CartPage(driver);
+        cartPage.clickPayBtn();
+    }
+
+    @Then("^Payment Success message will appear$")
+    public void paymentSuccessMessageWillAppear() {
+        CartPage cartPage = new CartPage(driver);
+        Assert.assertTrue(cartPage.validateSuccessPayment());
+    }
+
+    @And("^User go back to detail purchase page on cookit$")
+    public void userGoBackToDetailPurchasePageOnCookit() throws InterruptedException {
+        CartPage cartPage = new CartPage(driver);
+        cartPage.closeMidtransTab();
+        Assert.assertTrue(cartPage.validateDetailPurchasePage());
+    }
+
+    @And("^User click back button$")
+    public void userClickBackButton() {
+        CartPage cartPage = new CartPage(driver);
+        cartPage.clickBackBtn();
+    }
+
+    @And("^User already on my purchase page$")
+    public void userAlreadyOnMyPurchasePage() {
+        CartPage cartPage = new CartPage(driver);
+        Assert.assertTrue(cartPage.validateMyPurchasePage());
+    }
+
+    @When("^User click on shipped tab$")
+    public void userClickOnShippedTab() throws InterruptedException {
+        CartPage cartPage = new CartPage(driver);
+        cartPage.clickShippedTabButton();
+        Thread.sleep(5000);
+    }
+
+    @And("^list of paid item will appear$")
+    public void listOfPaidItemWillAppear() {
+        CartPage cartPage = new CartPage(driver);
+        Assert.assertTrue(cartPage.validatePaidItemName());
     }
 }
