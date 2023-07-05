@@ -118,7 +118,7 @@ public class RecipePageSteps {
     }
 
     @Then("^Click on add image button and upload valid image file$")
-    public void clickOnAddImageButtonAndUploadValidImageFile(String image) throws InterruptedException {
+    public void clickOnAddImageButtonAndUploadValidImageFile() throws InterruptedException {
         RecipePage recipePage = new RecipePage(driver);
         recipePage.uploadImage("Krabby_Patty.jpg");
         Thread.sleep(2000);

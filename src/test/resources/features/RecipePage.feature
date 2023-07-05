@@ -113,7 +113,7 @@ Feature: Recipe Page
     Then User click reply on three dots icon button on title secction
     And User already on Reply page
 
-  @Cookit
+  @Cookit @ReplyRecipe
   Scenario: User reply recipe
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -128,7 +128,6 @@ Feature: Recipe Page
     Then User click reply on three dots icon button on title secction
     And User already on Reply page
     When User input "Coba Reply" on Describe field on Reply Recipe page
-    Then Click on add image button and upload valid image file
     And User click Submit button on Reply Recipe page
 
   @RecipePage @Cookit
