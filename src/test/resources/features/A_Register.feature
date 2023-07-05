@@ -1,6 +1,6 @@
 Feature: Register user
 
-  @Register @RegisterPositive
+  @Register @RegisterPositive @Cookit
   Scenario: User register with valid and unregistered username, email, and password
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -11,7 +11,7 @@ Feature: Register user
     And User click sign up button
     Then User already on login page after success pop up
 
-  @Register
+  @Register @Cookit
   Scenario: User register with valid and already registered username, email, and password
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -22,7 +22,7 @@ Feature: Register user
     And User click sign up button
     Then Alert with message "user already registered" is shown
 
-  @Register
+  @Register @Cookit
   Scenario: User register with empty username, valid email and valid password
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -33,7 +33,7 @@ Feature: Register user
     And User click sign up button
     Then Alert with message "Please input your email, username and password.." is shown
 
-  @Register
+  @Register @Cookit
   Scenario: User register with 6 characters password, valid username and valid email
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -44,7 +44,7 @@ Feature: Register user
     And User click sign up button
     Then Alert with message "At least 8 characters with no space" is shown
 
-  @Register
+  @Register @Cookit
   Scenario: User register without uppercase letter password, valid username and valid email
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -55,7 +55,7 @@ Feature: Register user
     And User click sign up button
     Then Alert with message "At least 1 upper case letter" is shown
 
-  @Register
+  @Register @Cookit
   Scenario: User register without number on password, valid username and valid email
     Given User already on Cookit landing page
     When User click on Sign In button

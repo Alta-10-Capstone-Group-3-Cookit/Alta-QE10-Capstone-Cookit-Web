@@ -1,6 +1,6 @@
 Feature: Search Page
 
-  @SearchPage
+  @SearchPage @Cookit
   Scenario: User search for recipes
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -15,7 +15,7 @@ Feature: Search Page
     And User input "Burger" search field on search page
     And List of recipe name contains "Burger" will appear
 
-  @SearchPage
+  @SearchPage @Cookit
   Scenario: User search for people
     Given User already on Cookit landing page
     When User click on Sign In button

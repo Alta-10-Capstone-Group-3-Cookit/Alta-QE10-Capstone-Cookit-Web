@@ -1,6 +1,6 @@
 Feature: Profile page
 
-  @ProfilePage
+  @ProfilePage @Cookit
   Scenario: Validate user informations on profile page
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -15,7 +15,7 @@ Feature: Profile page
     And Validate user profile layout is displayed
     And Validate user recipe post is displayed
 
-  @ProfilePage
+  @ProfilePage @Cookit
   Scenario: User give like on their recipe post
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -29,7 +29,7 @@ Feature: Profile page
     When User click like icon on their post
     Then Like count number should be "1"
 
-  @ProfilePage
+  @ProfilePage @Cookit
   Scenario: User unlike their recipe post
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -44,7 +44,7 @@ Feature: Profile page
     And User click like icon on their post
     Then Like count number should be "0"
 
-  @ProfilePage
+  @ProfilePage @Cookit
   Scenario: User click reply on their recipe post
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -59,7 +59,7 @@ Feature: Profile page
     And User click on Reply
     Then User navigated to reply page
 
-  @ProfilePage
+  @ProfilePage @Cookit
   Scenario: User click recook on their recipe post
     Given User already on Cookit landing page
     When User click on Sign In button

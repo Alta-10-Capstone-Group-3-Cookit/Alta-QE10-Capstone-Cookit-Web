@@ -1,7 +1,7 @@
 Feature: Follow back user and Unfollow User
 
 #  Follow Back
-  @FollowerFollowing
+  @FollowerFollowing @Cookit
   Scenario: User follow back another user
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -20,7 +20,7 @@ Feature: Follow back user and Unfollow User
 
 
 #    Unfollow
-  @FollowerFollowing
+  @FollowerFollowing @Cookit
   Scenario: Unfollow user
     Given User already on Cookit landing page
     When User click on Sign In button

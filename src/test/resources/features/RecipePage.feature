@@ -1,6 +1,6 @@
 Feature: Recipe Page
 
-
+  @Cookit
   Scenario: User like recipe
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -13,7 +13,7 @@ Feature: Recipe Page
     And User already on recipe page
     When User click like button icon
 
-
+  @Cookit
   Scenario: User unlike recipe
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -27,7 +27,7 @@ Feature: Recipe Page
     When User click like button icon
     Then User click unlike button icon
 
-
+  @Cookit
   Scenario: User increase total servings
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -40,7 +40,7 @@ Feature: Recipe Page
     And User already on recipe page
     When User click plus button on ingredients
 
-
+  @Cookit
   Scenario: User decrease total servings
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -54,7 +54,7 @@ Feature: Recipe Page
     When User click plus button on ingredients
     Then User click minus button on ingredients
 
-
+  @Cookit
   Scenario: User decrease total servings
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -67,7 +67,7 @@ Feature: Recipe Page
     And User already on recipe page
     And User click add to cart button on Buy Ingredients section
 
-
+  @Cookit
   Scenario: User add comment on recipe
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -83,7 +83,7 @@ Feature: Recipe Page
     And User click on submit button on comments section
     And Comments "Coba comment" should appear
 
-
+  @Cookit
   Scenario: User go to recook recipe page
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -98,7 +98,7 @@ Feature: Recipe Page
     Then User click recook on three dots icon button on title secction
     And User already on Recook page
 
-
+  @Cookit
   Scenario: User go to reply recipe page
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -113,7 +113,7 @@ Feature: Recipe Page
     Then User click reply on three dots icon button on title secction
     And User already on Reply page
 
-
+  @Cookit
   Scenario: User reply recipe
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -131,7 +131,7 @@ Feature: Recipe Page
     Then Click on add image button and upload valid image file
     And User click Submit button on Reply Recipe page
 
-  @RecipePage
+  @RecipePage @Cookit
   Scenario: User recook recipe
     Given User already on Cookit landing page
     When User click on Sign In button

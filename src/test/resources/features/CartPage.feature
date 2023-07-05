@@ -1,6 +1,6 @@
 Feature: Cart Page
 
-
+  @Cookit
   Scenario: User checkout item
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -16,7 +16,7 @@ Feature: Cart Page
     And User click checkout button
     And User already on payment page
 
-
+  @Cookit
   Scenario: User checkout item
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -39,7 +39,7 @@ Feature: Cart Page
     And User click confirm button
     And User already on Detail Purchase page
 
-  @CartPage
+  @CartPage @Cookit
   Scenario: User pay for placed order
     Given User already on Cookit landing page
     When User click on Sign In button

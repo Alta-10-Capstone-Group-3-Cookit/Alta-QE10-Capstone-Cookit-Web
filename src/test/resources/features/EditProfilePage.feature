@@ -1,6 +1,6 @@
 Feature: Edit profile and request verified
 
-  @EditProfile
+  @EditProfile @Cookit
   Scenario: Edit user profile with all input fields and image are filled with valid value
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -17,7 +17,7 @@ Feature: Edit profile and request verified
     And Click save button
     Then Error message alert should not be displayed
 
-  @EditProfile
+  @EditProfile @Cookit
   Scenario: Edit user profile with empty current password
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -34,7 +34,7 @@ Feature: Edit profile and request verified
     And Click save button
     Then Error message alert should be displayed
 
-  @EditProfile
+  @EditProfile @Cookit
   Scenario: Edit user profile with new password is only 6 characters
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -51,7 +51,7 @@ Feature: Edit profile and request verified
     And Click save button
     Then Error message alert should be displayed
 
-  @EditProfile
+  @EditProfile @Cookit
   Scenario: Edit user profile with new password does not have uppercase letter
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -68,7 +68,7 @@ Feature: Edit profile and request verified
     And Click save button
     Then Error message alert should be displayed
 
-  @EditProfile
+  @EditProfile @Cookit
   Scenario: Edit user profile with new password does not have any number
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -85,7 +85,7 @@ Feature: Edit profile and request verified
     And Click save button
     Then Error message alert should be displayed
 
-  @EditProfile
+  @EditProfile @Cookit
   Scenario: User send request to be verified by admin
     Given User already on Cookit landing page
     When User click on Sign In button

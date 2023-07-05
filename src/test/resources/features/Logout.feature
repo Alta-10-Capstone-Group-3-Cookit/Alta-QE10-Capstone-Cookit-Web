@@ -1,6 +1,6 @@
 Feature: Logout
 
-  @Logout
+  @Logout @Cookit
   Scenario: User do logout
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -13,7 +13,7 @@ Feature: Logout
     And User click Yes on pop up
     Then User already on login page
 
-  @Logout
+  @Logout @Cookit
   Scenario: Admin do logout
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -26,7 +26,7 @@ Feature: Logout
     And User click Yes on pop up
     Then User already on login page
 
-  @Logout
+  @Logout @Cookit
   Scenario: Verified user do logout
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -39,7 +39,7 @@ Feature: Logout
     And User click Yes on pop up
     Then User already on login page
 
-  @Logout
+  @Logout @Cookit
   Scenario: User cancel logout
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -52,7 +52,7 @@ Feature: Logout
     And User click No on pop up
     Then User still on home page
 
-  @Logout
+  @Logout @Cookit
   Scenario: Admin cancel logout
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -65,7 +65,7 @@ Feature: Logout
     And User click No on pop up
     Then User still on home page
 
-  @Logout
+  @Logout @Cookit
   Scenario: Verified user cancel logout
     Given User already on Cookit landing page
     When User click on Sign In button
