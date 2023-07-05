@@ -154,7 +154,7 @@ public class RecipePage {
     public void uploadImage(String image) {
         String path = System.getProperty("user.dir") + "/src/test/resources/assets/" + image;
         AddImageBtn.click();
-        AddImageBtn.sendKeys();
+        AddImageBtn.sendKeys(path);
     }
 
     public void clickSubmitReplyButton() {

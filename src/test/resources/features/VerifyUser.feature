@@ -1,6 +1,6 @@
 Feature: Verify user
 
-  @VerifyUser
+  @VerifyUser @Cookit
   Scenario: Admin verify user on Verify User page
     Given User already on Cookit landing page
     When User click on Sign In button

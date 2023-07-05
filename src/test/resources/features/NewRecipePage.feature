@@ -1,6 +1,6 @@
 Feature: Add new reecipe
 
-  @NewRecipePage
+  @NewRecipePage @Cookit
   Scenario: Add new recipe with all inputs are filled with valid data
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -27,7 +27,7 @@ Feature: Add new reecipe
     And Validate recipe title is "Burger Kepiting"
     And Validate price is "50000"
 
-  @NewRecipePage
+  @NewRecipePage @Cookit
   Scenario: Add new recipe with blank recipe title
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -51,7 +51,7 @@ Feature: Add new reecipe
     And Click Submit button
     Then User still on New Recipe page
 
-  @NewRecipePage
+  @NewRecipePage @Cookit
   Scenario: Add new recipe with blank description
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -75,7 +75,7 @@ Feature: Add new reecipe
     And Click Submit button
     Then User still on New Recipe page
 
-  @NewRecipePage
+  @NewRecipePage @Cookit
   Scenario: Add new recipe with wrong type image
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -100,7 +100,7 @@ Feature: Add new reecipe
     And Click Submit button
     Then User still on New Recipe page
 
-  @NewRecipePage
+  @NewRecipePage @Cookit
   Scenario: Add new recipe with blank ingredient
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -122,7 +122,7 @@ Feature: Add new reecipe
     And Click Submit button
     Then User still on New Recipe page
 
-  @NewRecipePage
+  @NewRecipePage @Cookit
   Scenario: Add new recipe with blank step
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -144,7 +144,7 @@ Feature: Add new reecipe
     And Click Submit button
     Then User still on New Recipe page
 
-  @NewRecipePage
+  @NewRecipePage @Cookit
   Scenario: Add new recipe with blank price
     Given User already on Cookit landing page
     When User click on Sign In button

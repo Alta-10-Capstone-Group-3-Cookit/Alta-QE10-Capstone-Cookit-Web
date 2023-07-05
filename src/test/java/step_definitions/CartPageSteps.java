@@ -155,8 +155,9 @@ public class CartPageSteps {
     }
 
     @And("^User already on my purchase page$")
-    public void userAlreadyOnMyPurchasePage() {
+    public void userAlreadyOnMyPurchasePage() throws InterruptedException {
         CartPage cartPage = new CartPage(driver);
+        Thread.sleep(5000);
         Assert.assertTrue(cartPage.validateMyPurchasePage());
     }
 

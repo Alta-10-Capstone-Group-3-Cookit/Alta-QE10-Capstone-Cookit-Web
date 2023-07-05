@@ -1,6 +1,6 @@
 Feature: Add new cooking
 
-  @NewCookingPage
+  @NewCookingPage @Cookit
   Scenario: Add new cooking with description and valid image file
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -16,7 +16,7 @@ Feature: Add new cooking
     And Click submit button on new cooking page
     Then User redirected to Profile page
 
-  @NewCookingPage
+  @NewCookingPage @Cookit
   Scenario: Add new cooking with blank description and valid image file
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -31,7 +31,7 @@ Feature: Add new cooking
     And Click submit button on new cooking page
     Then User still on New Cooking page
 
-  @NewCookingPage
+  @NewCookingPage @Cookit
   Scenario: Add new cooking with description and without image file
     Given User already on Cookit landing page
     When User click on Sign In button
@@ -46,7 +46,7 @@ Feature: Add new cooking
     And Click submit button on new cooking page
     Then User still on New Cooking page
 
-  @NewCookingPage
+  @NewCookingPage @Cookit
   Scenario: Add new cooking without description and image file
     Given User already on Cookit landing page
     When User click on Sign In button
