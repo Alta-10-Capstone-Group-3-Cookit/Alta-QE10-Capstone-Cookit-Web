@@ -55,7 +55,7 @@ Feature: Recipe Page
     Then User click minus button on ingredients
 
   @Cookit
-  Scenario: User decrease total servings
+  Scenario: User add item to cart
     Given User already on Cookit landing page
     When User click on Sign In button
     Then User already on login page

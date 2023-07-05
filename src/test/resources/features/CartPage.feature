@@ -17,7 +17,7 @@ Feature: Cart Page
     And User already on payment page
 
   @Cookit
-  Scenario: User checkout item
+  Scenario: User checkout item to detail purchase page
     Given User already on Cookit landing page
     When User click on Sign In button
     Then User already on login page
